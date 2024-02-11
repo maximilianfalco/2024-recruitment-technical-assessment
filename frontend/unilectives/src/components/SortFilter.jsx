@@ -31,7 +31,7 @@ const SortFilter = () => {
           cursor: 'pointer',
           padding: 0,
         }}>
-          <Typography sx={{ opacity: 0.5, fontSize: '1.1em' }}>Sort by</Typography>
+          <Typography sx={{ opacity: 0.5, fontSize: '1.2em', fontFamily: 'Thin' }}>Sort by</Typography>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" width='16px' height='16px' viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
           </svg>

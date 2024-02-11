@@ -15,7 +15,7 @@ const Navbar = () => {
       boxSizing: 'border-box',
     }}>
       <Stack gap={2}>
-        <img src={unilectives} alt='Unilectives Logo' style={{ width: '33px', height: '33px', alignSelf: 'center', cursor: 'pointer' }}/> 
+        <img src={unilectives} alt='Unilectives Logo' style={{ width: '33px', height: 'auto', alignSelf: 'center', cursor: 'pointer' }}/> 
         <Divider sx={{ height: 3, color: 'black' }}></Divider>
       </Stack>
       <Box sx={{

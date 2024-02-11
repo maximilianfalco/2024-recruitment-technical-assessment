@@ -18,7 +18,21 @@ const SearchBar = () => {
           <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
         </svg>
       </Box>
-      <InputBase placeholder="Search for a course e.g. COMP1511" sx={{ flexGrow: 1, fontSize: '0.875em', lineHeight: '1.25rem', fontWeight: '500', color: 'rgb(156 173 233)', px: 1.5, py: 1 }}/>
+      <InputBase placeholder="Search for a course e.g. COMP1511" sx={{ 
+        flexGrow: 1, 
+        fontSize: '0.875em', 
+        fontFamily: 'Demibold',
+        lineHeight: '1.25rem', 
+        fontWeight: '500', 
+        color: 'rgb(156 173 233)', 
+        px: 1.5, 
+        py: 1,
+        input: {
+          "&::placeholder": {
+            opacity: 1
+          }
+        } 
+      }}/>
     </Box>
   )
 }

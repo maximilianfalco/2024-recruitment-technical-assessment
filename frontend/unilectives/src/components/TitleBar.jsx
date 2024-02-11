@@ -8,13 +8,13 @@ const TitleBar = () => {
       display: 'flex',
       justifyContent: 'center',
       boxSizing: 'border-box',
-      mt: '40px',
+      pt: '40px',
     }}>
       <Stack gap={1.5} sx={{ width: bodyWidth }}>
-        <Typography>
+        <Typography sx={{ fontFamily: 'Thin', fontWeight: 600 }}>
           DevSoc presents
         </Typography>
-        <Typography variant='h1' sx={{ fontWeight: 'bold', fontSize: '4.5em', color: '#1279f2' }}>
+        <Typography variant='h1' sx={{ fontWeight: 'bold', fontSize: '4.5em', color: 'rgb(18 121 242)', fontFamily: 'Bold' }}>
           unilectives
         </Typography>
         <Typography sx={{ fontWeight: '550' }}>

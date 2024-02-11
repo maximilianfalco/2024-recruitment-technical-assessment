@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+h2 {
+  line-height: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@font-face {
+  font-family: 'Black';
+  src: local("TTCommonsBlack"), url("./fonts/TTCommonsBlack.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Bold';
+  src: local("TTCommonsBold"), url("./fonts/TTCommonsBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'DemiBold';
+  src: local("TTCommonsDemiBold"), url("./fonts/TTCommonsDemiBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: local("TTCommonsRegular"), url("./fonts/TTCommonsRegular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Thin';
+  src: local("TTCommonsThin"), url("./fonts/TTCommonsThin.otf") format("opentype");
+}
+

@@ -1,4 +1,5 @@
 import './App.css';
+
 import { Stack, Box } from '@mui/material';
 
 import Navbar from './components/Navbar';
@@ -9,11 +10,12 @@ import Courses from './components/Courses';
 
 function App() {
   return (
-    <body name='body'>
+    <div name='body'>
       <Navbar/>
       <Box name='main-content' sx={{
         ml: '5rem',
         boxSizing: 'border-box',
+        mb: 20,
       }}>
         <TitleBar/>
         <Stack sx={{
@@ -26,7 +28,7 @@ function App() {
           <Courses/>
         </Stack>
       </Box>
-    </body>
+    </div>
   );
 }
 
