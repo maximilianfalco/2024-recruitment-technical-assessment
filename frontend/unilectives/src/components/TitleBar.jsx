@@ -1,5 +1,6 @@
 import { Box, Stack, Typography } from '@mui/material'
 import React from 'react'
+import { bodyWidth } from './Constants'
 
 const TitleBar = () => {
   return (
@@ -7,9 +8,9 @@ const TitleBar = () => {
       display: 'flex',
       justifyContent: 'center',
       boxSizing: 'border-box',
-      // backgroundColor: 'blue'
+      mt: '40px',
     }}>
-      <Stack gap={1.5} sx={{ mt: '40px', width: '84%',  }}>
+      <Stack gap={1.5} sx={{ width: bodyWidth }}>
         <Typography>
           DevSoc presents
         </Typography>

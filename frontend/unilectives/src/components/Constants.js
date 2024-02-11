@@ -1,0 +1,1 @@
+export const bodyWidth = '83.33%';
