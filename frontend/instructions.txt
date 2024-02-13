@@ -3,3 +3,5 @@ Please detail the instructions to view your solution here:
 1. make your way to the unilectives folder
 2. run 'npm install' 
 3. run 'npm start'
+
+Note: Changed a few values in courses.json (the one in src) to reflect data given in Unilectives.png better

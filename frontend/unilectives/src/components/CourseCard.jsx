@@ -1,13 +1,15 @@
-import { Box, Stack, Typography, Rating } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 import React from 'react'
-import StarRateIcon from '@mui/icons-material/StarRate';
+import OfferedTermCard from './OfferedTermCard';
 
 const CourseCard = (props) => {
   const details = props.details;
   const code = details.course_prefix + details.course_code;
   const desc = details.course_title;
-  const rating = details.average_stars/5 * 100 + 'px';
+  const ratingWidth = 120;
+  const ratingColoured = details.average_stars/5 * ratingWidth + 'px';
   const reviews = details.total_reviews;
+  const offerings = details.offered_terms;
 
   const starSize = '2rem';
   const starSpacing = '-3px';
@@ -17,10 +19,13 @@ const CourseCard = (props) => {
       px: '1.5rem',
       py: '1.75rem',
       borderRadius: '0.75rem',
-      backgroundColor: 'rgb(250, 250, 250)',
-      boxShadow: '0 4px 6px -4px rgba(0,0,0,.1)',
+      backgroundColor: '#FAFAFA',
+      boxShadow: '0 4px 6px -2px rgba(0,0,0,.3)',
       cursor: 'pointer',
       boxSizing: 'border-box',
+      '&:hover': {
+        backgroundColor: 'rgba(239,239,240,0.5)',
+      }
     }}>
       <Box sx={{
         display: 'flex',
@@ -35,7 +40,7 @@ const CourseCard = (props) => {
             <Typography sx={{ 
               position: 'absolute',
               color: 'rgb(183 137 229)',
-              width: rating,
+              width: ratingColoured,
               fontSize: starSize,
               letterSpacing: starSpacing,
               lineHeight: '2rem',
@@ -45,7 +50,7 @@ const CourseCard = (props) => {
             </Typography>
             <Typography sx={{
               color: 'hsla(0,0%,60%,.3)',
-              width: 'fit-content',
+              width: `${ratingWidth}px/`,
               fontSize: starSize,
               letterSpacing: starSpacing,
               lineHeight: '2rem',
@@ -69,6 +74,16 @@ const CourseCard = (props) => {
       }}>
         {desc}
       </Typography>
+      <Box sx={{
+        mt: '0.5rem',
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '0.5rem',
+      }}>
+        {offerings.map(offering => (
+          <OfferedTermCard label={offering}/>
+        ))}
+      </Box>
     </Box>
   )
 }
