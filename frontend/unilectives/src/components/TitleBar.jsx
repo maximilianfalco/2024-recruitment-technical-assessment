@@ -1,8 +1,22 @@
 import { Box, Stack, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { bodyWidth } from './Constants'
 
 const TitleBar = () => {
+  const [red, setRed] = useState(18);
+  const [green, setGreen] = useState (121);
+  const [blue, setBlue] = useState(242);
+
+  const getRandomColorValue = () => {
+    return Math.floor(Math.random() * 256);
+  }
+
+  const generateNewColor = () => {
+    setRed(getRandomColorValue());
+    setGreen(getRandomColorValue());
+    setBlue(getRandomColorValue());
+  }
+
   return (
     <Box sx={{
       display: 'flex',
@@ -14,7 +28,13 @@ const TitleBar = () => {
         <Typography sx={{ fontFamily: 'Thin', fontWeight: 600 }}>
           DevSoc presents
         </Typography>
-        <Typography variant='h1' sx={{ fontWeight: 'bold', fontSize: '4.5em', color: 'rgb(18 121 242)', fontFamily: 'Bold' }}>
+        <Typography variant='h1' onClick={generateNewColor} sx={{
+          fontWeight: 'bold',
+          fontSize: '4.5em',
+          color: `rgb(${red} ${green} ${blue})`,
+          fontFamily: 'Bold',
+          cursor: 'pointer'
+        }}>
           unilectives
         </Typography>
         <Typography sx={{ fontWeight: '550' }}>
