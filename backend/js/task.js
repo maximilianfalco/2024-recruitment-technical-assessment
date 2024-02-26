@@ -58,7 +58,42 @@ function kLargestCategories(files, k) {
  * Task 3
  */
 function largestFileSize(files) {
-    return 0;
+    const rootFiles = [];
+    for (const file of files) {
+        if (file.parent === -1) {
+            rootFiles.push(file);
+        }
+    }
+    var largestFileSize = 0;
+    for (const file of rootFiles) {
+        const size = getTotalFileSize(file, files);
+        if (size > largestFileSize) largestFileSize = size;
+    }
+    return largestFileSize;
+}
+
+const getTotalFileSize = (file, files) => {
+    const children = getAllChildren(file, files);
+    if (children.length > 0) {
+        var totalSize = file.size;
+        for (const child of children) {
+            totalSize += getTotalFileSize(child, files);
+        }
+        return totalSize;
+    } else {
+        return file.size;
+    }
+}
+
+const getAllChildren = (file, files) => {
+    const children = [];
+    const fileId = file.id;
+    for (const file of files) {
+        if (file.parent === fileId) {
+            children.push(file)
+        }
+    }
+    return children; 
 }
 
 
