@@ -5,18 +5,19 @@
 function leafFiles(files) {
     const leafs = [];
     for (const file of files) {
-        if (!isFolder(file.categories)) leafs.push(file.name);
+        if (!hasChildren(file, files)) leafs.push(file.name);
     }
     return leafs;
 }
 
-const isFolder = (categories) => {
-    for (const category of categories) {
-        if (category == "Folder") {
+const hasChildren = (file, files) => {
+    const fileId = file.id;
+    for (const file of files) {
+        if (file.parent === fileId) {
             return true;
         }
     }
-    return false;
+    return false; 
 }
 
 /**
