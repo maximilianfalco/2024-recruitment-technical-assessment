@@ -5,7 +5,7 @@
 function leafFiles(files) {
     const leafs = [];
     for (const file of files) {
-        if (!isFolder(file.categories)) leafs.push(file.name)
+        if (!isFolder(file.categories)) leafs.push(file.name);
     }
     return leafs;
 }
@@ -20,14 +20,42 @@ const isFolder = (categories) => {
 }
 
 /**
- * Task 1
+ * Task 2
  */
 function kLargestCategories(files, k) {
-    return [];
+    const fileMap = new Map();
+    for (const file of files) {
+        for (const category of file.categories) {
+            if (!fileMap.has(category)) {
+                fileMap.set(category, 1);
+            } else {
+                const currentCount = fileMap.get(category);
+                fileMap.set(category, currentCount + 1);
+            }
+        }
+    }
+    const sortedMap = new Map([...fileMap].sort((a,b) => {
+        if (b[1] !== a[1]) {
+            return b[1] - a[1];
+        } else {
+            return a[0].localeCompare(b[0]);
+        }
+    }))
+    const largestCategories = [];
+    var obtained = 0;
+    for (const category of sortedMap.keys()) {
+        if (obtained < k) {
+            largestCategories.push(category);
+            obtained++;
+        }
+    }
+    largestCategories.sort();
+    return largestCategories;
 }
 
+
 /**
- * Task 1
+ * Task 3
  */
 function largestFileSize(files) {
     return 0;
