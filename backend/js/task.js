@@ -3,7 +3,20 @@
  * Task 1
  */
 function leafFiles(files) {
-    return [];
+    const leafs = [];
+    for (const file of files) {
+        if (!isFolder(file.categories)) leafs.push(file.name)
+    }
+    return leafs;
+}
+
+const isFolder = (categories) => {
+    for (const category of categories) {
+        if (category == "Folder") {
+            return true;
+        }
+    }
+    return false;
 }
 
 /**
